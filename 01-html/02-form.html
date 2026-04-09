@@ -3,12 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Exercise 02 - Form</title>
   </head>
+
   <body>
     <main>
-      <!-- Add your code here -->
+      <h1>Roth IRA Calculator</h1>
+
+      <form>
+        <div>
+          <label>Balance ($)</label><br>
+          <input type="number">
+        </div>
+
+        <br>
+
+        <div>
+          <label>Annual contribution (4)</label><br>
+          <input type="number">
+        </div>
+
+        <br>
+
+        <div>
+          <label>Maximize contributions?</label><br>
+          <input type="radio" name="max"> Yes
+          <input type="radio" name="max"> No
+        </div>
+
+        <br>
+
+        <div>
+          <label>Expected rate of return (5)</label><br>
+          <input type="number">
+        </div>
+
+        <br>
+
+        <div>
+          <label>Current age</label><br>
+          <input type="number">
+        </div>
+
+        <br>
+
+        <div>
+          <label>Retirement age</label><br>
+          <input type="number">
+        </div>
+
+        <br>
+
+        <div>
+          <label>Marginal tax rate (%)</label><br>
+          <input type="number">
+        </div>
+
+        <br>
+
+        <button type="submit">Calculate</button>
+        <button type="reset">Reset</button>
+      </form>
+
+      <p>
+        This exercise is a simplified version of the Roth IRA Calculator at
+        <a href="https://www.calculator.net">Calculator.net</a>
+      </p>
     </main>
   </body>
 </html>
