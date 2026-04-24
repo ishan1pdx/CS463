@@ -1,15 +1,70 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>CSS Exercise 01 - Books</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Start with the code from the HTML folder.
-      - Make sure to fix any issues in your HTML code.
-      - Add classes to style the elements on the page. -->
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Exercise 01 - Books</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="#books">ASOIAF Books</a>
+    <a href="#covers">First Edition Covers</a>
+    <a href="#table">Table of POV Characters</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>A Song of Ice and Fire - George R.R. Martin</h1>
+
+  <section id="books">
+    <h2>ASOIAF Books</h2>
+
+    <ul>
+      <li>A Song of Ice and Fire series:
+        <ol>
+          <li>A Game of Thrones (1996)</li>
+          <li>A Clash of Kings (1998)</li>
+          <li>A Storm of Swords (2000)</li>
+          <li>A Feast for Crows (2005)</li>
+          <li>A Dance with Dragons (2011)</li>
+        </ol>
+      </li>
+    </ul>
+  </section>
+
+  <section id="covers">
+    <h2>First Edition Covers</h2>
+
+    <div class="images">
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg" alt="">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/39/AClashOfKings.jpg" alt="">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/24/AStormOfSwords.jpg" alt="">
+    </div>
+  </section>
+
+  <section id="table">
+    <h2>POV Character with the Most Chapters in Each Book</h2>
+
+    <table>
+      <tr>
+        <th>POV Character</th>
+        <th>Total Chapters</th>
+      </tr>
+      <tr>
+        <td>Tyrion Lannister</td>
+        <td>47</td>
+      </tr>
+      <tr>
+        <td>Jon Snow</td>
+        <td>42</td>
+      </tr>
+    </table>
+  </section>
+</main>
+
+</body>
 </html>
