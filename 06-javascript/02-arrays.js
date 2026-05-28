@@ -21,72 +21,60 @@ const pokemons = [
   { id: 20, name: 'Raticate', types: ['Normal'] },
 ];
 
-// Add your code here for: forEachPokemon
+const forEachPokemon = function () {
+  const pokemonList = [];
+
+  pokemons.forEach((pokemon) => {
+    pokemonList.push(`#${pokemon.id} ${pokemon.name} - ${pokemon.types.join(' / ')}`);
+  });
+
+  return pokemonList.join('\n');
+};
 
 console.group('=========== forEachPokemon =========== ');
 console.log(forEachPokemon());
-// #1 Bulbasaur - Grass / Poison
-// #2 Ivysaur - Grass / Poison
-// #3 Venusaur - Grass / Poison
-// #4 Charmander - Fire
-// #5 Charmeleon - Fire
-// #6 Charizard - Fire / Flying
-// #7 Squirtle - Water
-// #8 Wartortle - Water
-// #9 Blastoise - Water
-// #10 Caterpie - Bug
-// #11 Metapod - Bug
-// #12 Butterfree - Bug / Flying
-// #13 Weedle - Bug / Poison
-// #14 Kakuna - Bug / Poison
-// #15 Beedrill - Bug / Poison
-// #16 Pidgey - Normal / Flying
-// #17 Pidgeotto - Normal / Flying
-// #18 Pidgeot - Normal / Flying
-// #19 Rattata - Normal
-// #20 Raticate - Normal
 console.groupEnd();
 
-// Add your code here for: filterPokemons
+const filterPokemons = function (type) {
+  return pokemons
+    .filter((pokemon) => pokemon.types.includes(type))
+    .map((pokemon) => pokemon.name)
+    .sort();
+};
 
 console.group('=========== filterPokemons =========== ');
 console.log(filterPokemons('Fire'));
-// [ 'Charizard', 'Charmander', 'Charmeleon' ]
 console.log(filterPokemons('Normal'));
-// [ 'Pidgeot', 'Pidgeotto', 'Pidgey', 'Raticate', 'Rattata' ]
 console.log(filterPokemons('Poison'));
-// [ 'Beedrill', 'Bulbasaur', 'Ivysaur', 'Kakuna', 'Venusaur', 'Weedle' ]
 console.groupEnd();
 
-// Add your code here for: searchPokemons
+const searchPokemons = function (searchTerm) {
+  const query = searchTerm.toLowerCase();
+
+  return pokemons.filter((pokemon) => {
+    const nameMatch = pokemon.name.toLowerCase().includes(query);
+    const typeMatch = pokemon.types.some((type) =>
+      type.toLowerCase().includes(query),
+    );
+
+    return nameMatch || typeMatch;
+  });
+};
 
 console.group('=========== searchPokemons =========== ');
 console.log(searchPokemons('Wartortle'));
-// [ { id: 8, name: 'Wartortle', types: [ 'Water' ] } ]
 console.log(searchPokemons('pidgey'));
-// [ { id: 16, name: 'Pidgey', types: [ 'Normal', 'Flying' ] } ]
 console.log(searchPokemons('bug'));
-// [
-//   { id: 10, name: 'Caterpie', types: [ 'Bug' ] },
-//   { id: 11, name: 'Metapod', types: [ 'Bug' ] },
-//   { id: 12, name: 'Butterfree', types: [ 'Bug', 'Flying' ] },
-//   { id: 13, name: 'Weedle', types: [ 'Bug', 'Poison' ] },
-//   { id: 14, name: 'Kakuna', types: [ 'Bug', 'Poison' ] },
-//   { id: 15, name: 'Beedrill', types: [ 'Bug', 'Poison' ] }
-// ]
 console.groupEnd();
 
-// Add your code here for: reducePokemons
+const reducePokemons = pokemons.reduce((typeCounts, pokemon) => {
+  pokemon.types.forEach((type) => {
+    typeCounts[type] = (typeCounts[type] || 0) + 1;
+  });
+
+  return typeCounts;
+}, {});
 
 console.group('=========== reducePokemons =========== ');
 console.log(reducePokemons);
-// {
-//   Grass: 3,
-//   Poison: 6,
-//   Fire: 3,
-//   Flying: 5,
-//   Water: 3,
-//   Bug: 6,
-//   Normal: 5
-// }
 console.groupEnd();
